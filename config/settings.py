@@ -35,7 +35,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Django Rest Framework Football Api  '
+    'TITLE': 'Django Rest Framework Zlash News '
 }
 # Application definition
 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # Third party package
     'zlash_news_api',  # Local Api
+    'drf_spectacular',  # Third party package
 ]
 
 MIDDLEWARE = [
