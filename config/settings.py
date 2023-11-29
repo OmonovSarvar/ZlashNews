@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+tf^(rwx)^l1ycr-hxh#587ne+ne(jsf&-6mfj^o@oe7c@y%)m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', '127.0.0.1', '.vercel.app']
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
