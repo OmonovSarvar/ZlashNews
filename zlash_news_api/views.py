@@ -39,4 +39,10 @@ class NewsList(generics.ListAPIView):
             for main, cont in piece_title, piece_content:
                 main = main.text
                 cont = cont.text
-
+                if not NewsModel.objects.filter(title=main).exists():
+                    model = NewsModel(title=main, description=cont, url=url1, day=x)
+                    model.save()
+                    news_list.append(model)
+                else:
+                    model = NewsModel(title=main, description=cont, url=url1, day=x)
+                    news_list.append(model)
