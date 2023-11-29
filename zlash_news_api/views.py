@@ -52,3 +52,19 @@ class NewsList(generics.ListAPIView):
         result_two = soup.find(id='orb-modules')
         title_two = result_two.find_all('h3', class_='gs-c-promo-heading__title gel-pica-bold nw-o-link-split__text')
         content_two = result_two.find_all('p', class_='gs-c-promo-summary gel-long-primer gs-u-mt nw-c-promo-summary')
+        title_two = title_two[0:16]
+        content_two = content_two[0:16]
+        for i in range(0, 16, 2):
+            piece_title_two = title_two[i: i + 2]
+            piece_content_two = content_two[i: i + 2]
+            for tit, cont2 in piece_title_two, piece_content_two:
+                tit = tit.text
+                cont2 = cont2.text
+                # if not NewsModel.objects.filter(title=tit).exists():
+                #     model = NewsModel(title=tit, description=cont2, url=url2, day=x)
+                #     model.save()
+                #     news_list.append(model)
+                # else:
+                #     model = NewsModel(title=tit, description=cont2, url=url2, day=x)
+                #     news_list.append(model)
+        return news_list
