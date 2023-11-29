@@ -17,6 +17,10 @@ class NewsList(generics.ListAPIView):
     serializer_class = NewsSerializer
 
     def get_queryset(self):
+        # Get day of the week
+        day = date.today()
+        x = day_name[day.weekday()]
+
         url1 = 'https://www.bbc.com/news'  # Get news from this links
         url2 = 'https://eurasianet.org'  # Get news from this links
 
