@@ -46,3 +46,9 @@ class NewsList(generics.ListAPIView):
                 else:
                     model = NewsModel(title=main, description=cont, url=url1, day=x)
                     news_list.append(model)
+        # Request to eurasia net
+        response = requests.get(url2)
+        soup_second = BeautifulSoup(response.content, 'html.parser')
+        result_two = soup.find(id='orb-modules')
+        title_two = result_two.find_all('h3', class_='gs-c-promo-heading__title gel-pica-bold nw-o-link-split__text')
+        content_two = result_two.find_all('p', class_='gs-c-promo-summary gel-long-primer gs-u-mt nw-c-promo-summary')
