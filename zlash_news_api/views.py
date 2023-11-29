@@ -31,3 +31,12 @@ class NewsList(generics.ListAPIView):
         result = soup.find(id='orb-modules')
         title = result.find_all('h3', class_='gs-c-promo-heading__title gel-pica-bold nw-o-link-split__text')
         content = result.find_all('p', class_='gs-c-promo-summary gel-long-primer gs-u-mt nw-c-promo-summary')
+        title = title[:15]
+        content = content[:15]
+        for i in range(1, 15, 2):
+            piece_title = title[i: i + 2]
+            piece_content = content[i: i + 2]
+            for main, cont in piece_title, piece_content:
+                main = main.text
+                cont = cont.text
+
