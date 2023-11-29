@@ -9,6 +9,7 @@ djangorestframework = "*"
 drf-spectacular = "*"
 requests = "*"
 bs4 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
