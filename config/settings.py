@@ -27,7 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Django Rest Framework Football Api  '
+}
 # Application definition
 
 INSTALLED_APPS = [
