@@ -60,11 +60,11 @@ class NewsList(generics.ListAPIView):
             for tit, cont2 in piece_title_two, piece_content_two:
                 tit = tit.text
                 cont2 = cont2.text
-                # if not NewsModel.objects.filter(title=tit).exists():
-                #     model = NewsModel(title=tit, description=cont2, url=url2, day=x)
-                #     model.save()
-                #     news_list.append(model)
-                # else:
-                #     model = NewsModel(title=tit, description=cont2, url=url2, day=x)
-                #     news_list.append(model)
+                if not NewsModel.objects.filter(title=tit).exists():
+                    model = NewsModel(title=tit, description=cont2, url=url2, day=x)
+                    model.save()
+                    news_list.append(model)
+                else:
+                    model = NewsModel(title=tit, description=cont2, url=url2, day=x)
+                    news_list.append(model)
         return news_list
