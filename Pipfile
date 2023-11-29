@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==4.2"
+django = "*"
 djangorestframework = "*"
+drf-spectacular = "*"
+requests = "*"
+bs4 = "*"
 
 [dev-packages]
 
